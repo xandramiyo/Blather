@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<div>
+    <form class="new-post" action="/posts" method="POST">
+        <div class="heading-input"> 
+            <input name="heading" placeholder="Title (optional)" spellcheck="true" autocorrect="off">
+        </div>
+        <div class="subHeading-input">
+            <input name="subHeading" placeholder="Please specify chapter/episode/etc. if applicable" spellcheck="true" autocorrect="off">
+        </div>
+        <div class="text-area">
+            <textarea name="content" placeholder="Blather away" spellcheck="true" autocorrect="off" rows="5" cols="50"></textarea>
+        </div>
+        <div class="postBtn">
+            <button type="submit">Post</button>
+        </div>
+    </form>
+</div>
+
+<%- include('../partials/footer') %>

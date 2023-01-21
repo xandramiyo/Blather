@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+  </head>
+  <body>
+    <header>
+        <div class="title">
+          <h1><%= title %></h1>
+        </div>
+        <div class="nav">
+          <nav>
+          <% if (user) { %>
+          <a href="/">Home</a>
+          <a href="/posts">Profile</a>
+          <a href="/logout">Log Out</a>
+          <% } else { %>
+              <a href="/auth/google" class="login">Log In</a>
+          <% } %>
+          </nav>
+        </div>
+    </header>
+
+<div class="pfp"></div>
+<div class="profile-buttons">
+    <form action="/posts/new" method="GET">
+      <button type="submit">Create a New Thread</button>
+    </form>
+</div>
+
+<div class="post-ctr">
+  <% posts.forEach(function(p) { %>
+    <table>
+      <tr>
+        <th><% p.heading %></th>
+      </tr>
+      <tr>
+        <td><% p.subHeading %></td>
+      </tr>
+    </table>
+  <% }) %>
+</div>
+
+<%- include('../partials/footer') %>
