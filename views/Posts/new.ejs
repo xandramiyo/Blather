@@ -1,20 +1,29 @@
 <%- include('../partials/header') %>
 
-<div>
-    <form class="new-post" action="/posts" method="POST">
-        <div class="heading-input"> 
-            <input name="heading" placeholder="Title (optional)" spellcheck="true" autocorrect="off">
+<div class="form-ctr">
+    <div class="new-form">
+        <div class="title">
+            <h1><%= title %></h1>
         </div>
-        <div class="subHeading-input">
-            <input name="subHeading" placeholder="Please specify chapter/episode/etc. if applicable" spellcheck="true" autocorrect="off">
-        </div>
-        <div class="text-area">
-            <textarea name="content" placeholder="Blather away" spellcheck="true" autocorrect="off" rows="5" cols="50"></textarea>
-        </div>
-        <div class="postBtn">
-            <button type="submit">Post</button>
-        </div>
-    </form>
+        <form action="/posts" method="POST">
+            <div class="heading-input"> 
+                <textarea name="heading" placeholder="Title (optional)" spellcheck="true" autocorrect="off" ></textarea>
+            </div>
+            <div class="subHeading-input">
+                <textarea name="subHeading" placeholder="One Piece" spellcheck="true" autocorrect="off" ></textarea>
+                <textarea name="subHeading" placeholder="Chapter 500" spellcheck="true" autocorrect="off" ></textarea>
+            </div>
+            <div class="markup">
+                text markup goes here- why do the sides extend out
+            </div>
+            <div class="content">
+                <textarea name="content" placeholder="Blather away" spellcheck="true" autocorrect="off" ></textarea>
+            </div>
+            <div class="post-Btn">
+                <button id="post-Btn" type="submit">Post</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 <%- include('../partials/footer') %>

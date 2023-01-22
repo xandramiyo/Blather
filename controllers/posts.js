@@ -13,7 +13,7 @@ function index(req, res) {
 }
 
 function newPost(req, res) {
-    res.render("posts/new", { title: "Add Thread" })
+    res.render("posts/new", { title: "Start New Thread" })
 }
 
 function create(req, res) {

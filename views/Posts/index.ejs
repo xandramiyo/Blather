@@ -6,27 +6,30 @@
   </head>
   <body>
     <header>
-        <div class="title">
-          <h1><%= title %></h1>
-        </div>
-        <div class="nav">
-          <nav>
-          <% if (user) { %>
-          <a href="/">Home</a>
-          <a href="/posts">Profile</a>
-          <a href="/logout">Log Out</a>
-          <% } else { %>
-              <a href="/auth/google" class="login">Log In</a>
-          <% } %>
-          </nav>
+      <a class="home-icon" href="/">
+        <img src="https://i.imgur.com/axTaELO.png">
+      </a>
+      <nav>
+        <% if (user) { %>
+        <a href="/">Home</a>
+        <a href="/posts">Profile</a>
+        <a href="/logout">Log Out</a>
+        <% } else { %>
+          <a href="/auth/google" class="login">Log In</a>
+        <% } %>
+      </nav>
         </div>
     </header>
 
-<div class="pfp"></div>
-<div class="profile-buttons">
-    <form action="/posts/new" method="GET">
-      <button type="submit">Create a New Thread</button>
-    </form>
+<div class="sidebar">
+  <div class="pfp">
+    <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" >
+  </div>
+  <div class="profile-buttons">
+      <form action="/posts/new" method="GET">
+        <button class="new-Btn" type="submit">Create a New Thread</button>
+      </form>
+  </div>
 </div>
 
 <div class="post-ctr">
