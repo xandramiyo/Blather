@@ -17,8 +17,12 @@ function newPost(req, res) {
 }
 
 function create(req, res) {
+    req.body.user = req.user._id
+    req.body.userName = req.user.name
+    req.body.userAvatar = req.user.avatar
+
     const post = new Post(req.body);
-    post.save(function (err) {
+    post.save(function (err, post) {
       if (err) return res.redirect("/posts/new");
       console.log(post);
       res.redirect('/posts');

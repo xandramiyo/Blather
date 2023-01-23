@@ -34,14 +34,27 @@
 
 <div class="post-ctr">
   <% posts.forEach(function(p) { %>
-    <table>
-      <tr>
-        <th><% p.heading %></th>
-      </tr>
-      <tr>
-        <td><% p.subHeading %></td>
-      </tr>
-    </table>
+    <div class="post">
+      <article>
+        <h4><% p.heading %></h4>
+        <div class="subHeading-ctr">
+          <h6><%= p.subHeading1 %></h6>
+          <h6><%= p.subHeading2 %></h6>
+        </div>
+        <p><%= p.content %></p>
+        </article>
+        <div class="post-edit-btns">
+          <form action="/posts/new" method="GET">
+            <button class="new-Btn" type="submit"><img src="https://i.imgur.com/P14Uze2.png"></button>
+          </form>
+          <form action="/posts/new" method="GET">
+            <button class="new-Btn" type="submit"><img src="https://i.imgur.com/bLLevTd.png"></button>
+          </form>
+          <form action="/posts/new" method="GET">
+            <button class="new-Btn" type="submit"><img src="https://i.imgur.com/0mTzs5e.png"></button>
+          </form>
+        </div>
+    </div>
   <% }) %>
 </div>
 

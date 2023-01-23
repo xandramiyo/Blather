@@ -10,7 +10,7 @@
     background-color: #A8CCC9;
     display: grid;
     grid-template-rows: 10vmin 1fr;
-    grid-template-columns: 35vmin 1fr;
+    grid-template-columns: 30vmin 1fr;
     grid-template-areas: 
     "nav nav"
     "sidebar main";
@@ -82,3 +82,40 @@
     background-color: #538D89;
     padding: 6px 5px; 
   }
+
+  .post-ctr {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 10px;
+  }
+
+  .post {
+    display: flex;
+    flex-direction: column;
+  }
+
+  article {
+    height: 80%;
+    background-color: white;
+    border: 1px solid rgb(228, 226, 226);
+    padding: 5px;
+  }
+
+  .post-edit-btns {
+    height: 20%;
+    width: 100%;
+    display: flex; 
+  }
+
+  .post-edit-btns > form {
+    width: 33.4%;
+  }
+
+
+  button > img {
+    width: auto;
+    height: .8rem;
+  }
+  

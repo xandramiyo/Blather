@@ -14,10 +14,17 @@ Express
 
 Node.js
 
-## Try it!
+## Take a Look!
+
+<a>Check out Blather</a>
+
+Log in using a google account to get started!
 
 ## Next Steps (Icebox)
 
 ## Acknowledgements
 
 <a href="https://www.flaticon.com/free-icons/owl" title="owl icons">Owl icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/waste" title="waste icons">Waste icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/pencil" title="pencil icons">Pencil icons created by afif fudin - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/plus-sign" title="plus sign icons">Plus sign icons created by Dewi Sari - Flaticon</a>

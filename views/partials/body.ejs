@@ -1,0 +1,16 @@
+</head>
+<body>
+  <header>
+	<a class="home-icon" href="/">
+	  <img src="https://i.imgur.com/axTaELO.png">
+	</a>
+	<nav>
+	  <% if (user) { %>
+	  <a href="/">Home</a>
+	  <a href="/posts">Profile</a>
+	  <a href="/logout">Log Out</a>
+	  <% } else { %>
+		<a href="/auth/google" class="login">Log In</a>
+	  <% } %>
+	</nav>
+  </header>
