@@ -2,8 +2,10 @@ const Post = require('../models/post')
 
 module.exports = {
     index,
-    new: newPost,
+    show,
+    new: newThread,
     create,
+    delete: deleteThread,
 }
 
 function index(req, res) {
@@ -12,7 +14,15 @@ function index(req, res) {
       })
 }
 
-function newPost(req, res) {
+function show(req, res) {
+    Post.findById(req.params.id, function(err, post) {
+        console.log(post)
+        res.render('posts/show', { post })
+    })
+    
+}
+
+function newThread(req, res) {
     res.render("posts/new", { title: "Start New Thread" })
 }
 
@@ -27,4 +37,12 @@ function create(req, res) {
       console.log(post);
       res.redirect('/posts');
     });
+}
+
+function deleteThread(req, res) {
+    Post.findOneAndDelete(
+        {_id: req.params.id, userRecommending: req.user._id}, function(err) {
+            res.redirect('/posts')
+        }
+    )
 }

@@ -4,26 +4,13 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/index.css' />
   </head>
-  <body>
-    <header>
-      <a class="home-icon" href="/">
-        <img src="https://i.imgur.com/axTaELO.png">
-      </a>
-      <nav>
-        <% if (user) { %>
-        <a href="/">Home</a>
-        <a href="/posts">Profile</a>
-        <a href="/logout">Log Out</a>
-        <% } else { %>
-          <a href="/auth/google" class="login">Log In</a>
-        <% } %>
-      </nav>
-        </div>
-    </header>
+  <%- include('../partials/header') %>
 
 <div class="sidebar">
   <div class="pfp">
+    <% if (user) { %>
     <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" >
+    <% } %>
   </div>
   <div class="profile-buttons">
       <form action="/posts/new" method="GET">
@@ -35,8 +22,8 @@
 <div class="post-ctr">
   <% posts.forEach(function(p) { %>
     <div class="post">
-      <article>
-        <h4><% p.heading %></h4>
+      <article onclick="window.location='/posts/<%= p.id %>'">
+        <h4><%= p.heading %></h4>
         <div class="subHeading-ctr">
           <h6><%= p.subHeading1 %></h6>
           <h6><%= p.subHeading2 %></h6>
@@ -45,13 +32,13 @@
         </article>
         <div class="post-edit-btns">
           <form action="/posts/new" method="GET">
-            <button class="new-Btn" type="submit"><img src="https://i.imgur.com/P14Uze2.png"></button>
+            <button class="add-Btn" type="submit"><img src="https://i.imgur.com/P14Uze2.png"></button>
           </form>
           <form action="/posts/new" method="GET">
-            <button class="new-Btn" type="submit"><img src="https://i.imgur.com/bLLevTd.png"></button>
+            <button class="edi-Btn" type="submit"><img src="https://i.imgur.com/bLLevTd.png"></button>
           </form>
-          <form action="/posts/new" method="GET">
-            <button class="new-Btn" type="submit"><img src="https://i.imgur.com/0mTzs5e.png"></button>
+          <form action="/posts/<%= p._id %>?_method=DELETE" method="POST">
+            <button class="delete-Btn" type="submit"><img src="https://i.imgur.com/0mTzs5e.png"></button>
           </form>
         </div>
     </div>
