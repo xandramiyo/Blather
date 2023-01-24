@@ -5,6 +5,8 @@ module.exports = {
     show,
     new: newThread,
     create,
+    edit,
+    update,
     delete: deleteThread,
 }
 
@@ -43,6 +45,28 @@ function deleteThread(req, res) {
     Post.findOneAndDelete(
         {_id: req.params.id, userRecommending: req.user._id}, function(err) {
             res.redirect('/posts')
+        }
+    )
+}
+
+function edit(req, res) {
+    Post.findOne({_id: req.params.id, userRecommending: req.user._id}, function(err, post) {
+        console.log(err)
+        if(err || !post) return res.redirect('/posts')
+        console.log(post)
+        res.render('posts/edit', { title: "Edit Post", post})
+    })
+}
+
+function update(req, res) {
+    console.log(req.body)
+    Post.findOneAndUpdate(
+        {_id: req.params.id, userRecommending: req.user._id},
+        req.body,
+        {new: true},
+        function(err, post) {
+            if (err || !post) return res.redirect('/posts')
+            res.redirect(`/posts/${post._id}`)
         }
     )
 }

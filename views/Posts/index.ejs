@@ -34,7 +34,7 @@
           <form action="/posts/new" method="GET">
             <button class="add-Btn" type="submit"><img src="https://i.imgur.com/P14Uze2.png"></button>
           </form>
-          <form action="/posts/new" method="GET">
+          <form action="/posts/<%= p._id %>/edit" method="GET">
             <button class="edi-Btn" type="submit"><img src="https://i.imgur.com/bLLevTd.png"></button>
           </form>
           <form action="/posts/<%= p._id %>?_method=DELETE" method="POST">
