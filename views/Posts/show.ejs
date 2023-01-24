@@ -14,8 +14,30 @@
 		</div>
 		<div class="content"><%= post.content %></div>
 	</div>
-	<div class="thread">
 
+	<% if (post.threadPosts.length) { %>
+	<div class="show-thread">
+		<div class="subHeadings"> 
+			<div><%= threadPost.subHeading1 %></div>
+			<div><%= threadPost.subHeading2 %></div>
+		</div>
+		<div class="content"><%= threadPost.content %></div>
+	</div>
+	<% } %>
+
+	<br><div class="add-to-thread">
+		<% if (user?._id.equals(post.user)) { %>
+		<form id="add-to-thread" action="/posts/<%= post._id %>/threadPost" method="POST">
+			<div class="subHeadings"> 
+				<textarea name="subHeading1" spellcheck="true" autocorrect="off"></textarea>
+				<textarea name="subHeading2" spellcheck="true" autocorrect="off"></textarea>
+			</div>
+			<textarea name="content" spellcheck="true" autocorrect="off"></textarea>
+			<div class="post-Btn">
+				<button id="add-to-thread-btn" type="submit">Add to Thread</button>
+            </div>
+			<% } %>
+		</form>
 	</div>
 </div>
 

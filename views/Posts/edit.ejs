@@ -12,17 +12,17 @@
     </div>
     <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
         <div class="heading-input">
-            <textarea name="heading"><%= post.heading %></textarea>
+            <textarea name="heading" spellcheck="true" autocorrect="off"><%= post.heading %></textarea>
         </div>
         <div class="subHeading-input"> 
-            <textarea name="subHeading1"><%= post.subHeading1 %></textarea>
-            <textarea name="subHeading2"><%= post.subHeading2 %></textarea>
+            <textarea name="subHeading1" spellcheck="true" autocorrect="off"><%= post.subHeading1 %></textarea>
+            <textarea name="subHeading2" spellcheck="true" autocorrect="off"><%= post.subHeading2 %></textarea>
         </div>
         <div class="markup">
           text markup goes here- why is this and ^ width different
         </div>
         <div class="content-input">
-          <textarea name="content"><%= post.content %></textarea>
+          <textarea name="content" spellcheck="true" autocorrect="off"><%= post.content %></textarea>
         </div>
         <div class="post-Btn">
           <button id="post-Btn" type="submit">Post</button>

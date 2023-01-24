@@ -49,11 +49,11 @@ nav > a {
   font-size: 1.4em;
 }
 
-.show-post,
 .form-ctr,
 .edit-ctr {
   display: flex;
   justify-content: center;
+  height: 100vh;
 }
 
 .tile,
@@ -62,11 +62,17 @@ nav > a {
   display: flex;
   flex-direction: column;
   margin-top: 5vmin;
+  margin-bottom: 5vmin;
   background-color: #538D89;
   padding: 20px;
   width: 60vw;
-  height: 100%;
+  height: fit-content;
   align-items: center;
+}
+
+.new-form, 
+.edit-form {
+  height: 80%
 }
 
 .title {
@@ -108,7 +114,7 @@ form {
 }
 
 .content-input {
-  height: 100%;
+  height: 80%;
   width: 100%;
 }
 
@@ -120,8 +126,10 @@ form {
 
 .post-Btn {
   margin-top: 10px;
+  width: 48%;
   display: flex;
   justify-content: flex-end;
+  position: absolute;
 }
 
 #post-Btn {
@@ -133,9 +141,15 @@ form {
 
 /* SHOW THREAD PAGE */
 
+.show-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
 .tile {
   background-color: white;
-
 }
 
 .tile > div {
@@ -165,6 +179,6 @@ form {
 
 .content {
   width: 100%;
-  height: 100%;
+  height: fit-content;
   padding: 5px;
 }

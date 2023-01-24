@@ -31,6 +31,7 @@
         <p><%= p.content %></p>
         </article>
         <div class="post-edit-btns">
+          <% if (user?._id.equals(p.user)) { %>
           <form action="/posts/new" method="GET">
             <button class="add-Btn" type="submit"><img src="https://i.imgur.com/P14Uze2.png"></button>
           </form>
@@ -40,6 +41,7 @@
           <form action="/posts/<%= p._id %>?_method=DELETE" method="POST">
             <button class="delete-Btn" type="submit"><img src="https://i.imgur.com/0mTzs5e.png"></button>
           </form>
+          <% } %>
         </div>
     </div>
   <% }) %>
