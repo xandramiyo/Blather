@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <%- include('../partials/header') %>
+
+<div class="container">
+	<div class="back-btn">
+		<button id="back" onclick="history.back()"><img src="https://i.imgur.com/AzZybLO.png"></button>
+	</div>
+	<div class="tile">
+		<div class="heading"><%= post.heading %></div>
+		<div class="subHeadings"> 
+			<div><%= post.subHeading1 %></div>
+			<div><%= post.subHeading2 %></div>
+		</div>
+		<div class="content"><%= post.content %></div>
+	</div>
+
+	<% if (post.comments.length) { %>
+		<% post.comments.forEach(function(c) { %>
+		<div class="comment-ctr">
+			<div class="show-comment">
+				<div class="user-info">
+					<div>
+						<img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" >
+					</div>
+					<div>
+						<%= c.userName %>
+					</div>
+				</div>
+				<div class="content"><%= c.content %></div>
+			</div>
+		</div>
+		<% }) %>
+	<% } %>
+
+	<div class="comment-form-ctr">
+		<form class="add-comment" action="/posts/<%= post._id %>/comments" method="POST">
+			<div class="comment-content">
+				<textarea name="content" spellcheck="true" autocorrect="off"></textarea>
+			</div>
+			<button id="add-comment-btn" type="submit">Add Comment</button>
+		</form>
+	</div>
+
+</div>
+
+
+
+<%- include('../partials/footer') %>

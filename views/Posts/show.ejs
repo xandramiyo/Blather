@@ -22,10 +22,9 @@
 			<form class="reactions" action="/posts/" method="GET">
 				<button class="react-btn" type="submit"><img src="https://i.imgur.com/94wTCj9.png"></button>
 			</form>
-			<form class="comments" action="/posts/" method="GET">
+			<form class="comments" action="/posts/<%= post._id %>/comments" method="GET">
 				<button class="comment-btn" type="submit"><img src="https://i.imgur.com/wFklCCW.png"></button>
 			</form>
-
 		</div>
 	</div>
 

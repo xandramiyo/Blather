@@ -38,16 +38,14 @@
 	<% } %>
 	
 	<br>
-	<div class="comment-ctr">
-		<div class="add-comment">
-			<form id="add-comment" action="/threadPosts/" method="POST">
-				<div class="content-input">
-					<textarea id="comment-content" name="content" spellcheck="true" autocorrect="off"></textarea>
-				</div>
-				<button id="add-comment-btn" type="submit">Add Comment</button>
-			</form>
-		</div>
+	<div class="comment-form-ctr">
+		<form class="add-comment" action="/posts/<%= post._id %>/threadposts/<%= thread._id %>/comments" method="POST">
+			<div class="comment-content">
+				<textarea name="content" spellcheck="true" autocorrect="off"></textarea>
+			</div>
+			<button id="add-comment-btn" type="submit">Add Comment</button>
+		</form>
 	</div>
 </div>
 
-  <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>
