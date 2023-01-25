@@ -32,7 +32,7 @@
         </article>
         <div class="post-edit-btns">
           <% if (user?._id.equals(p.user)) { %>
-          <form action="/posts/new" method="GET">
+          <form action="/posts/<%= p._id %>/threadPosts" method="POST">
             <button class="add-Btn" type="submit"><img src="https://i.imgur.com/P14Uze2.png"></button>
           </form>
           <form action="/posts/<%= p._id %>/edit" method="GET">

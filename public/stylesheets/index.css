@@ -61,7 +61,6 @@
 
   .pfp > img {
     border-radius: 100%;
-
     height: 7em;
     width: 7em;
     justify-content: center;
@@ -97,12 +96,13 @@
   }
 
   article {
-    height: 80%;
+    height: 40vmin;
     background-color: white;
     border: 1px solid #366D62;
-    padding: 5px;
+    padding: 8px;
+    overflow: scroll;
   }
-
+  
   .post-edit-btns {
     height: 20%;
     width: 100%;

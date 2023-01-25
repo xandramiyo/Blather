@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <%- include('../partials/header') %>
+
+<div class="show-threadPost">
+	<div class="tile">
+		<div class="subHeadings"> 
+			<div><%= thread[0].subHeading1 %></div>
+			<div><%= thread[0].subHeading2 %></div>
+		</div>
+		<div class="content"><%= thread[0].content %></div>
+	</div>
+</div>
+  <%- include('../partials/footer') %>

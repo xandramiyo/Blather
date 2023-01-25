@@ -49,8 +49,7 @@ nav > a {
   font-size: 1.4em;
 }
 
-.form-ctr,
-.edit-ctr {
+.container {
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -81,7 +80,7 @@ nav > a {
   justify-content: flex-start;
   text-align: left;
   padding-bottom: 5px;
-  border-bottom: 2px solid #538D89;
+  border-bottom: 2px solid #A8CCC9;
 }
 
 /* START NEW THREAD/EDIT TILE PAGE */
@@ -133,13 +132,13 @@ form {
 }
 
 #post-Btn {
-  background-color: #538D89;
+  background-color: #A8CCC9;
   width: 4rem;
   height: 1.5rem;
-  border-radius: 30%;
+  border-radius: 35%;
 }
 
-/* SHOW THREAD PAGE */
+/* SHOW PAGE */
 
 .show-post {
   display: flex;
@@ -150,11 +149,12 @@ form {
 
 .tile {
   background-color: white;
+  margin-bottom: 10px;
 }
 
 .tile > div {
   margin: 5px;
-  border: 1px solid #366D62; 
+  /* border: 1px solid #366D62;  */
   background: white;
 }
 
@@ -162,15 +162,18 @@ form {
   width: 100%;
   height: 1.5em;
   display: flex;
-  justify-content: center;
-  padding: 5px;
+  /* justify-content: center; */
+  padding: 5px 5px 2px 5px;
+  margin: 5px 5px 0px 5px;
 }
 
 .subHeadings {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
-  padding: 2px;
+  padding: 2px 5px 5px 0px;
+  margin: 2px 5px 5px 0px;
+  color: gray;
 }
 
 .subHeadings > div {
@@ -181,4 +184,88 @@ form {
   width: 100%;
   height: fit-content;
   padding: 5px;
+}
+
+/* THREAD STYLING */
+
+.tile-ctr, 
+.thread-ctr {
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.tile-ctr > .thread-menu {
+  margin-top: 5vmin;
+  margin-bottom: 1vmin;
+}
+
+.show-thread {
+  background-color: white;
+  height: fit-content;
+  width: 60vw;
+  margin: 2px;
+  padding: 20px;
+}
+
+.add-to-thread {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vmin;
+  margin-bottom: 5vmin;
+  background-color: #538D89;
+  padding: 20px;
+  width: 63vw;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+}
+
+#add-to-thread > .post-Btn {
+  width: 61vw;
+}
+
+#add-to-thread-btn {
+  margin-left: 86%;
+}
+
+#thread-content {
+  height: 6em;
+  width: 99%;
+}
+
+.subHeadings-input {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 0px 2px 0px;
+  width: 100%
+}
+
+.subHeadings-input > textarea {
+  padding: 2px;
+  width: 48%;
+}
+
+/* THREAD MENU BUTTONS */
+
+.thread-menu {
+  background-color: #538D89;
+  display: flex; 
+  flex-direction: column;
+  margin: 2px 0px;
+}
+
+.thread-menu > div {
+  height: 33.4%;
+}
+
+.thread-menu button {
+  background-color: #538D89;
+  height: 100%;
+}
+
+.thread-menu img {
+  width: auto;
+  height: 1.5rem;
 }
