@@ -18,23 +18,23 @@
 		<div class="content"><%= post.content %></div>
 	</div>
 
-	<% if (post.comments.length) { %>
+	<div class="post-comment-ctr">
+		<% if (post.comments.length) { %>
 		<% post.comments.forEach(function(c) { %>
-		<div class="comment-ctr">
-			<div class="show-comment">
+			<div class="show-post-comment">
 				<div class="user-info">
-					<div>
+					<div class="avatar">
 						<img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" >
 					</div>
-					<div>
+					<div class="username">
 						<%= c.userName %>
 					</div>
 				</div>
-				<div class="content"><%= c.content %></div>
+				<div class="posted-content"><%= c.content %></div>
 			</div>
-		</div>
 		<% }) %>
-	<% } %>
+		<% } %>
+	</div>
 
 	<div class="comment-form-ctr">
 		<form class="add-comment" action="/posts/<%= post._id %>/comments" method="POST">

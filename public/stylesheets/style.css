@@ -331,6 +331,7 @@ li {
 
 .comment-form-ctr {
   padding: 30px 20px 20px 20px;
+  background-color: #366D62;
 }
 
 .add-comment {
@@ -351,13 +352,54 @@ li {
   margin: 5px;
 }
 
-/* #add-comment {
-  width: fit-content;
-  margin: 0px;
-} */
-
-
 #add-comment-btn {
   margin-left: 76%;
   width: fit-content;
+}
+
+/* POST SHOW PAGE FOR COMMENTS */
+
+.post-comment-ctr {
+  width: 60vw;
+  background-color: #538D89;
+  margin-top: 10px;
+  padding: 10px 20px 10px 20px;
+}
+
+.show-post-comment {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 5px;
+  background-color: white;
+}
+
+.user-info {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.avatar > img {
+  height: 1.5rem;
+  width: auto;
+  border-radius: 100%;
+}
+
+.avatar,
+.username {
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+.username {
+  margin-left: 5px;
+  /* border-bottom: 1px solid #538D89; */
+}
+
+.posted-content {
+  margin-left: 1.5rem;
+  padding-top: 8px;
+  width: 100%;
 }

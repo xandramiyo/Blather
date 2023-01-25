@@ -25,7 +25,7 @@ function show(req, res) {
         let thread = post.threadPosts.filter(function(p) {
             return req.params.threadId == p._id
         })
-        res.render('posts/showThreadComment', { thread } )
+        res.render('posts/showThreadComments', { post, thread} )
 })}
 
 async function deleteThreadPost(req, res, next) {
