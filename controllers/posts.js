@@ -18,7 +18,6 @@ function index(req, res) {
 
 function show(req, res) {
     Post.findById(req.params.id, function(err, post) {
-        console.log(post)
         res.render('posts/show', { post })
     })
     
@@ -36,7 +35,6 @@ function create(req, res) {
     const post = new Post(req.body);
     post.save(function (err, post) {
       if (err) return res.redirect("/posts/new");
-      console.log(post);
       res.redirect('/posts');
     });
 }
@@ -53,7 +51,6 @@ function edit(req, res) {
     Post.findOne({_id: req.params.id, userRecommending: req.user._id}, function(err, post) {
         console.log(err)
         if(err || !post) return res.redirect('/posts')
-        console.log(post)
         res.render('posts/edit', { title: "Edit Post", post})
     })
 }

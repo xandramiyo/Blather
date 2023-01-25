@@ -7,7 +7,7 @@
 
 <div class="show-post">
 	<div class="back-btn">
-		<button id="back" onclick="history.back()"><img src="https://i.imgur.com/AzZybLO.png"></button>
+		<button id="back" onclick="window.location='/posts/'"><img src="https://i.imgur.com/AzZybLO.png"></button>
 	</div>
 	<div class="tile-ctr">
 		<div class="tile">
@@ -25,9 +25,7 @@
 			<form class="comments" action="/posts/" method="GET">
 				<button class="comment-btn" type="submit"><img src="https://i.imgur.com/wFklCCW.png"></button>
 			</form>
-			<form class="dot-menu" action="/posts/" method="GET">
-				<button class="dot-menu-btn" type="submit"><img src="https://i.imgur.com/pKmajeW.png">
-			</form>
+
 		</div>
 	</div>
 
@@ -50,11 +48,23 @@
 						<img src="https://i.imgur.com/wFklCCW.png">
 					</button>
 				</form>
-				<form class="dot-menu" action="/posts/" method="GET">
+
+				<% if (user?._id.equals(t.user)) { %>
+				<form class="dot-menu" action="/posts/<%= post._id %>/threadPosts/<%= t._id %>?_method=DELETE" method="POST">
 					<button class="dot-menu-btn" type="submit">
 						<img src="https://i.imgur.com/pKmajeW.png">
 					</button>
 				</form>
+				<% } %>
+				<!-- <div class="dot-menu">
+					<a href="#!" class="dot-menu-btn"><img src="https://i.imgur.com/pKmajeW.png"></a>
+				</div> -->
+				
+					<!-- <ul class="dot-menu-list" >
+						<li><a href="">edit post</a></li>
+						<li><a href="">delete post</a></li>
+					</ul> -->
+				
 			</div>
 		</div>
 		<% }) %>
@@ -66,11 +76,11 @@
 			<% if (user?._id.equals(post.user)) { %>
 			<form id="add-to-thread" action="/posts/<%= post._id %>/threadPosts" method="POST">
 				<div class="subHeadings-input"> 
-					<textarea name="subHeading1" spellcheck="true" autocorrect="off" placeholder="One Piece"></textarea>
-					<textarea name="subHeading2" spellcheck="true" autocorrect="off" placeholder="Chapter 501"></textarea>
+					<textarea name="subHeading1" spellcheck="true" autocorrect="off" placeholder="One Piece" wrap="soft"></textarea>
+					<textarea name="subHeading2" spellcheck="true" autocorrect="off" placeholder="Chapter 501" wrap="soft"></textarea>
 				</div>
 				<div class="content-input">
-					<textarea id="thread-content" name="content" spellcheck="true" autocorrect="off"></textarea>
+					<textarea id="thread-content" name="content" spellcheck="true" autocorrect="off" wrap="soft"></textarea>
 				</div>
 				<button id="add-to-thread-btn" type="submit">Add to Thread</button>
 			</form>

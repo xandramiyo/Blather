@@ -7,4 +7,6 @@ router.get('/posts/:id/threadPosts/:threadId', threadPostsCtrl.show)
 
 router.post('/posts/:id/threadPosts', ensureLoggedIn, threadPostsCtrl.create)
 
+router.delete('/posts/:id/threadPosts/:threadId', ensureLoggedIn, threadPostsCtrl.delete)
+
 module.exports = router

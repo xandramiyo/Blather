@@ -4,6 +4,7 @@ const ThreadPost = require('../models/post')
 module.exports = {
 	create,
     show,
+    delete: deleteThreadPost,
 }
 
 function create(req, res) {
@@ -24,6 +25,20 @@ function show(req, res) {
         let thread = post.threadPosts.filter(function(p) {
             return req.params.threadId == p._id
         })
-        console.log('thread', thread)
         res.render('posts/showComment', { thread } )
 })}
+
+async function deleteThreadPost(req, res, next) {
+    try {
+        //findById only works on models, not on schemas in embedded data
+        const post = await Post.findById(req.params.id)
+        const threads = post.threadPosts     
+            if(!threads) return res.redirect('/posts')
+            post.threadPosts.remove(req.params.threadId)
+            //always save the parent document, not the child
+            await post.save()
+            res.redirect(`/posts/${post._id}`)
+        } catch(err) {
+        return next(err)
+    }
+}

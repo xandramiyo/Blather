@@ -7,7 +7,7 @@
 
 <div class="container">
   <div class="back-btn">
-		<button id="back" onclick="history.back()"><img src="https://i.imgur.com/AzZybLO.png"></button>
+		<button id="back" onclick="window.location='/posts/'"><img src="https://i.imgur.com/AzZybLO.png"></button>
 	</div>
   <div class="edit-form">
     <div class="title">
@@ -15,17 +15,17 @@
     </div>
     <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
         <div class="heading-input">
-            <textarea name="heading" spellcheck="true" autocorrect="off"><%= post.heading %></textarea>
+            <textarea name="heading" spellcheck="true" autocorrect="off" wrap="soft"><%= post.heading %></textarea>
         </div>
         <div class="subHeading-input"> 
-            <textarea name="subHeading1" spellcheck="true" autocorrect="off"><%= post.subHeading1 %></textarea>
-            <textarea name="subHeading2" spellcheck="true" autocorrect="off"><%= post.subHeading2 %></textarea>
+            <textarea name="subHeading1" spellcheck="true" autocorrect="off" wrap="soft"><%= post.subHeading1 %></textarea>
+            <textarea name="subHeading2" spellcheck="true" autocorrect="off" wrap="soft"><%= post.subHeading2 %></textarea>
         </div>
         <div class="markup">
           text markup goes here- why is this and ^ width different
         </div>
         <div class="content-input">
-          <textarea name="content" spellcheck="true" autocorrect="off"><%= post.content %></textarea>
+          <textarea name="content" spellcheck="true" autocorrect="off" wrap="soft"><%= post.content %></textarea>
         </div>
         <div class="post-Btn">
           <button id="post-Btn" type="submit">Post</button>

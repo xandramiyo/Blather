@@ -102,7 +102,7 @@ nav > a {
 /* START NEW THREAD/EDIT TILE PAGE */
 
 form {
-  /* margin-top: 20px; */
+  margin-top: 20px;
   width: 80%;
 }
 
@@ -219,7 +219,8 @@ form {
   padding: 20px;
 }
 
-.add-to-thread {
+.add-to-thread,
+.comment-ctr {
   display: flex;
   flex-direction: column;
   margin-top: 5vmin;
@@ -267,17 +268,12 @@ form {
   justify-content: center;
 }
 
-.thread-menu > form {
-  margin: 0px;
-  display: flex;
-  justify-content: center;
-}
-
 .thread-menu button {
   background-color: white;
 }
 
-.thread-menu img {
+.thread-menu img,
+a img {
   width: auto;
   height: 1.5rem;
 }
@@ -287,15 +283,49 @@ form {
 .dot-menu {
   display: flex;
   align-items: center;
+}
 
+.dot-menu {
+  width: 80%;
+  display: flex;
+  justify-content: center;
 }
 
 .react-btn,
 .comment-btn,
 .dot-menu-btn {
-  border: 1px white solid;
+  border: none;
   box-shadow: none;
   border-radius: 0px;
   cursor: pointer;
   width: 100%;
 }
+
+.dot-menu-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.dot-menu-btn:hover {
+  display: flex;
+  justify-content: center;
+}
+
+.dot-menu-list {
+  background: #538D89;
+  border: 1px solid black;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  width: 5rem;
+}
+
+li {
+  list-style: none;
+  color: black;
+}
+
+/* THREAD SHOW PAGE (FOR COMMENTS) */
+
