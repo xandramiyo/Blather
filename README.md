@@ -30,4 +30,5 @@ Log in using a google account to get started!
 <a href="https://www.flaticon.com/free-icons/plus-sign" title="plus sign icons">Plus sign icons created by Dewi Sari - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/clean" title="clean icons">Clean icons created by Smashicons - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/speech-bubble" title="speech bubble icons">Speech bubble icons created by winnievinzence - Flaticon</a>
-<a href="https://www.flaticon.com/free-icons/open-menu" title="open menu icons">Open menu icons created by Those Icons - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/more" title="more icons">More icons created by Royyan Wijaya - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/previous" title="previous icons">Previous icons created by NextGen - Flaticon</a>

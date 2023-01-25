@@ -51,7 +51,8 @@ nav > a {
 
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   height: 100vh;
 }
 
@@ -60,7 +61,6 @@ nav > a {
 .edit-form {
   display: flex;
   flex-direction: column;
-  margin-top: 5vmin;
   margin-bottom: 5vmin;
   background-color: #538D89;
   padding: 20px;
@@ -83,10 +83,26 @@ nav > a {
   border-bottom: 2px solid #A8CCC9;
 }
 
+.back-btn {
+  width: 62vw;
+  padding: 10px 20px 10px 0px;
+}
+
+#back {
+  border: none;
+  background-color: #A8CCC9;
+}
+
+#back img {
+  height: 3rem;
+  width: auto;
+  cursor: pointer;
+}
+
 /* START NEW THREAD/EDIT TILE PAGE */
 
 form {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   width: 80%;
 }
 
@@ -99,7 +115,7 @@ form {
   display: flex;
   justify-content: space-between;
   padding: 2px 0px 2px 0px;
-  width: 100%
+  width: 101%
 }
 
 .subHeading-input > textarea {
@@ -110,17 +126,17 @@ form {
 .markup {
   padding: 2px 2px 0px 2px;
   border: .5px solid white;
+  width: 100%;
 }
 
 .content-input {
-  height: 80%;
   width: 100%;
 }
 
 .content-input > textarea {
   padding: 0px 2px 2px 2px;
   width: 100%;
-  height: 100%;
+  height: 10rem;
 }
 
 .post-Btn {
@@ -149,12 +165,11 @@ form {
 
 .tile {
   background-color: white;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .tile > div {
   margin: 5px;
-  /* border: 1px solid #366D62;  */
   background: white;
 }
 
@@ -162,7 +177,6 @@ form {
   width: 100%;
   height: 1.5em;
   display: flex;
-  /* justify-content: center; */
   padding: 5px 5px 2px 5px;
   margin: 5px 5px 0px 5px;
 }
@@ -192,20 +206,16 @@ form {
 .thread-ctr {
   height: fit-content;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 5px;
-}
-
-.tile-ctr > .thread-menu {
-  margin-top: 5vmin;
-  margin-bottom: 1vmin;
 }
 
 .show-thread {
   background-color: white;
   height: fit-content;
   width: 60vw;
-  margin: 2px;
+  margin: 2px 2px 0px 2px;
   padding: 20px;
 }
 
@@ -216,7 +226,7 @@ form {
   margin-bottom: 5vmin;
   background-color: #538D89;
   padding: 20px;
-  width: 63vw;
+  width: 60vw;
   height: fit-content;
   align-items: center;
   justify-content: center;
@@ -250,22 +260,42 @@ form {
 /* THREAD MENU BUTTONS */
 
 .thread-menu {
-  background-color: #538D89;
+  background-color: white;
   display: flex; 
-  flex-direction: column;
-  margin: 2px 0px;
+  width: 60vw;
+  padding: 0px 20px;
+  justify-content: center;
 }
 
-.thread-menu > div {
-  height: 33.4%;
+.thread-menu > form {
+  margin: 0px;
+  display: flex;
+  justify-content: center;
 }
 
 .thread-menu button {
-  background-color: #538D89;
-  height: 100%;
+  background-color: white;
 }
 
 .thread-menu img {
   width: auto;
   height: 1.5rem;
+}
+
+.reaction,
+.comments,
+.dot-menu {
+  display: flex;
+  align-items: center;
+
+}
+
+.react-btn,
+.comment-btn,
+.dot-menu-btn {
+  border: 1px white solid;
+  box-shadow: none;
+  border-radius: 0px;
+  cursor: pointer;
+  width: 100%;
 }

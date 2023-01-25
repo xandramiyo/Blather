@@ -5,13 +5,49 @@
   </head>
   <%- include('../partials/header') %>
 
-<div class="show-threadPost">
-	<div class="tile">
-		<div class="subHeadings"> 
-			<div><%= thread[0].subHeading1 %></div>
-			<div><%= thread[0].subHeading2 %></div>
-		</div>
-		<div class="content"><%= thread[0].content %></div>
+<div class="container">
+	<div class="back-btn">
+		<button id="back" onclick="history.back()"><img src="https://i.imgur.com/AzZybLO.png"></button>
 	</div>
-</div>
+	<div class="show-threadPost">
+		<div class="tile">
+			<div class="subHeadings"> 
+				<div><%= thread[0].subHeading1 %></div>
+				<div><%= thread[0].subHeading2 %></div>
+			</div>
+			<div class="content"><%= thread[0].content %></div>
+		</div>
+	</div>
+	
+	<% if (thread[0].comments.length) { %>
+		<% thread[0].comments.forEach(function(c) { %>
+		<div class="comment-ctr">
+			<div class="show-comment">
+				<div class="user-info">
+					<div>
+						<img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" >
+					</div>
+					<div>
+						<%= c.userName %>
+					</div>
+				</div>
+				<div class="content"><%= c.content %></div>
+			</div>
+		</div>
+		<% }) %>
+	<% } %>
+	
+	<br>
+	<!-- <div class="container">
+		<div class="add-comment">
+			<form id="add-comment" action="/threadPosts/" method="POST">
+				<div class="content-input">
+					<textarea id="comment-content" name="content" spellcheck="true" autocorrect="off"></textarea>
+				</div>
+				<button id="add-comment-btn" type="submit">Add Comment</button>
+			</form>
+		</div>
+	</div>
+</div> -->
+
   <%- include('../partials/footer') %>

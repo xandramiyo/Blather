@@ -6,6 +6,9 @@
   <%- include('../partials/header') %>
 
 <div class="show-post">
+	<div class="back-btn">
+		<button id="back" onclick="history.back()"><img src="https://i.imgur.com/AzZybLO.png"></button>
+	</div>
 	<div class="tile-ctr">
 		<div class="tile">
 			<div class="heading"><%= post.heading %></div>
@@ -16,28 +19,22 @@
 			<div class="content"><%= post.content %></div>
 		</div>
 		<div class="thread-menu">
-			<div class="reactions">
-				<form action="/posts/" method="GET">
-					<button class="react-btn" type="submit"><img src="https://i.imgur.com/94wTCj9.png"></button>
-				</form>
-			</div>
-			<div class="comments">
-				<form action="/posts/" method="GET">
-					<button class="comment-btn" type="submit"><img src="https://i.imgur.com/wFklCCW.png"></button>
-				</form>
-			</div>
-			<div class="share">
-				<form action="/posts/" method="GET">
-					<button class="more-btn" type="submit"><img src="https://i.imgur.com/kNHPO2i.png">
-				</form>
-			</div>
+			<form class="reactions" action="/posts/" method="GET">
+				<button class="react-btn" type="submit"><img src="https://i.imgur.com/94wTCj9.png"></button>
+			</form>
+			<form class="comments" action="/posts/" method="GET">
+				<button class="comment-btn" type="submit"><img src="https://i.imgur.com/wFklCCW.png"></button>
+			</form>
+			<form class="dot-menu" action="/posts/" method="GET">
+				<button class="dot-menu-btn" type="submit"><img src="https://i.imgur.com/pKmajeW.png">
+			</form>
 		</div>
 	</div>
 
 	<% if (post.threadPosts.length) { %>
 		<% post.threadPosts.forEach(function(t) { %>
 		<div class="thread-ctr">
-			<div class="show-thread" onclick="window.location='/posts/<%= post.id %>/threadposts/<%= t.id %>/comments'">
+			<div class="show-thread">
 				<div class="subHeadings"> 
 					<div><%= t.subHeading1 %></div>
 					<div><%= t.subHeading2 %></div>
@@ -45,25 +42,19 @@
 				<div class="content"><%= t.content %></div>
 			</div>
 			<div class="thread-menu">
-				<div class="reactions">
-					<form action="/posts/" method="GET">
-						<button class="react-btn" type="submit"><img src="https://i.imgur.com/94wTCj9.png"></button>
-					</form>
-				</div>
-				<div class="comments">
-					<form action="/posts/<%= post._id %>/threadPosts/<%= t._id %>" method="GET">
-						<button class="more-btn" type="submit">
-							<img src="https://i.imgur.com/wFklCCW.png">
-						</button>
-					</form>
-				</div>
-				<div class="more">
-					<form action="/posts/" method="GET">
-						<button class="more-btn" type="submit">
-							<img src="https://i.imgur.com/kNHPO2i.png">
-						</button>
-					</form>
-				</div>
+				<form class="reactions" action="/posts/" method="GET">
+					<button class="react-btn" type="submit"><img src="https://i.imgur.com/94wTCj9.png"></button>
+				</form>
+				<form class="comments" action="/posts/<%= post._id %>/threadPosts/<%= t._id %>" method="GET">
+					<button class="comment-btn" type="submit">
+						<img src="https://i.imgur.com/wFklCCW.png">
+					</button>
+				</form>
+				<form class="dot-menu" action="/posts/" method="GET">
+					<button class="dot-menu-btn" type="submit">
+						<img src="https://i.imgur.com/pKmajeW.png">
+					</button>
+				</form>
 			</div>
 		</div>
 		<% }) %>
@@ -71,7 +62,7 @@
 
 	<br>
 	<div class="container">
-		<div class="add-to-thread">
+		<div class="add-to-thread" id="add-to-thread">
 			<% if (user?._id.equals(post.user)) { %>
 			<form id="add-to-thread" action="/posts/<%= post._id %>/threadPosts" method="POST">
 				<div class="subHeadings-input"> 
