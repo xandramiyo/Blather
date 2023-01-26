@@ -62,9 +62,8 @@ async function deleteThreadComment(req, res, next) {
         //findById only works on models, not on schemas in embedded data
         const post = await Post.findById(req.params.id)
         const threadPostFoundById = post.threadPosts.find(thread => thread._id.equals(req.params.threadId))
-            console.log(threadPostFoundById)
             // if(!threads) return res.redirect('/posts')
-            threadPostFoundById.comments.remove(req.params.commentId)
+            threadPostFoundById.comments.remove(req.params.commentsId)
             //always save the parent document, not the child
             await post.save()
             res.redirect(`/posts/${post._id}`)

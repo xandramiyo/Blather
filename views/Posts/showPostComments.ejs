@@ -2,7 +2,7 @@
 
 <div class="container">
 	<div class="back-btn">
-		<button id="back" onclick="history.back()"><img src="https://i.imgur.com/AzZybLO.png"></button>
+		<button id="back" onclick="window.location='/posts/<%= post.id %>'"><img src="https://i.imgur.com/AzZybLO.png"></button>
 	</div>
 	<div class="tile">
 		<div class="heading"><%= post.heading %></div>
@@ -13,8 +13,8 @@
 		<div class="content"><%= post.content %></div>
 	</div>
 
+	<% if (post.comments.length) { %>
 	<div class="post-comment-ctr">
-		<% if (post.comments.length) { %>
 		<% post.comments.forEach(function(c) { %>
 			<div class="show-post-comment">
 				<div class="user-info">
@@ -35,8 +35,8 @@
 				<% } %>
 			</div>
 		<% }) %>
-		<% } %>
 	</div>
+	<% } %>
 
 	<div class="comment-form-ctr">
 		<form class="add-comment" action="/posts/<%= post._id %>/comments" method="POST">
