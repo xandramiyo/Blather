@@ -1,6 +1,7 @@
 * {
   padding: 0px;
   margin: 0px;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -200,6 +201,10 @@ form {
   padding: 5px;
 }
 
+.dot-menu {
+  cursor: pointer;
+}
+
 /* THREAD STYLING */
 
 .tile-ctr, 
@@ -216,7 +221,7 @@ form {
   height: fit-content;
   width: 60vw;
   margin: 2px 2px 0px 2px;
-  padding: 20px;
+  padding: 20px 20px 10px 20px;
 }
 
 .add-to-thread,
@@ -264,8 +269,14 @@ form {
   background-color: white;
   display: flex; 
   width: 60vw;
-  padding: 0px 20px;
+  padding: 10px 20px 10px 20px;
   justify-content: center;
+}
+
+.thread-menu > form,
+.dot-menu > form,
+.reactions > form {
+  width: 100%;
 }
 
 .thread-menu button {
@@ -278,11 +289,13 @@ a img {
   height: 1.5rem;
 }
 
-.reaction,
+.reactions,
 .comments,
 .dot-menu {
   display: flex;
+  justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .dot-menu {
@@ -304,27 +317,16 @@ a img {
 .dot-menu-btn {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-
-.dot-menu-btn:hover {
+.comment-btn {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.dot-menu-list {
-  background: #538D89;
-  border: 1px solid black;
-}
-
-ul {
-  display: flex;
-  flex-direction: column;
-  width: 5rem;
-}
-
-li {
-  list-style: none;
-  color: black;
+.comment-btn > * {
+  padding: 4px;
 }
 
 /* THREAD SHOW PAGE (FOR COMMENTS) */
@@ -367,14 +369,20 @@ li {
 }
 
 .show-post-comment {
-  display: flex;
+  display: grid;
   flex-direction: column;
   padding: 20px;
   margin: 5px;
   background-color: white;
+  grid-template-columns: 1fr 5%;
+  grid-template-rows: 20% 1fr;
+  grid-template-areas: 
+    "user menu"
+    "comment menu";
 }
 
 .user-info {
+  grid-area: user;
   display: flex;
   width: 100%;
   justify-content: flex-start;
@@ -395,11 +403,33 @@ li {
 
 .username {
   margin-left: 5px;
-  /* border-bottom: 1px solid #538D89; */
 }
 
 .posted-content {
+  grid-area: comment;
   margin-left: 1.5rem;
   padding-top: 8px;
   width: 100%;
+}
+
+.comment-menu {
+  grid-area: menu;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0px 2px;
+  height: 100%;
+}
+
+.comment-menu-btn {
+  border: none;
+  box-shadow: none;
+  border-radius: 0px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.comment-menu-btn >img {
+  height: .8rem;
+  width: auto;
 }

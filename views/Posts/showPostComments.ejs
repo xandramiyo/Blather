@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <%- include('../partials/header') %>
+<%- include('../partials/header') %>
 
 <div class="container">
 	<div class="back-btn">
@@ -31,6 +26,13 @@
 					</div>
 				</div>
 				<div class="posted-content"><%= c.content %></div>
+				<% if (user?._id.equals(c.user)) { %>
+				<form class="comment-menu" action="/posts/<%= post._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
+					<button class="comment-menu-btn" type="submit">
+						<img src="https://i.imgur.com/6PeksRX.png">
+					</button>
+				</form>
+				<% } %>
 			</div>
 		<% }) %>
 		<% } %>

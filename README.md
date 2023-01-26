@@ -38,3 +38,5 @@ Log in using a google account to get started!
 <a href="https://www.flaticon.com/free-icons/more" title="more icons">More icons created by Royyan Wijaya - Flaticon</a>
 
 <a href="https://www.flaticon.com/free-icons/previous" title="previous icons">Previous icons created by NextGen - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/three-dots" title="three dots icons">Three dots icons created by manglayang studio - Flaticon</a>

@@ -4,6 +4,8 @@ module.exports = {
     show,
     createPostComment,
 	createThreadComment,
+    deletePostComment,
+    deleteThreadComment,
 }
 
 function show(req, res) {
@@ -39,7 +41,35 @@ function createThreadComment(req, res) {
         thread[0].comments.push(req.body)
         //always save the parent document, not the child
         post.save()
-            res.redirect(`/posts/${post._id}/threadPosts/${threadPost._id}/comments`)   
+            res.redirect(`/posts/${post._id}/threadposts/${thread[0]._id}`)   
 })}
 
+async function deletePostComment(req, res, next) {
+    try {
+        const post = await Post.findById(req.params.id)
+        console.log(post)
+        // if(!post) return res.redirect('/posts')
+        post.comments.remove(req.params.commentsId)
+        await post.save()
+        res.redirect(`/posts/${post._id}`)
+    } catch(err) {
+        return next(err)
+    }
+}
 
+async function deleteThreadComment(req, res, next) {
+    try {
+        //findById only works on models, not on schemas in embedded data
+        const post = await Post.findById(req.params.id)
+        const threadsArr = post.threadPosts     
+        const commentArr = threadsArr[0].comments
+        console.log(commentArr)
+            // if(!threads) return res.redirect('/posts')
+            commentArr[0].remove(req.params.commentId)
+            //always save the parent document, not the child
+            await post.save()
+            res.redirect(`/posts/${post._id}`)
+        } catch(err) {
+        return next(err)
+    }
+}

@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <%- include('../partials/header') %>
+<%- include('../partials/header') %>
 
 <div class="show-post">
 	<div class="back-btn">
@@ -19,12 +14,16 @@
 			<div class="content"><%= post.content %></div>
 		</div>
 		<div class="thread-menu">
-			<form class="reactions" action="/posts/" method="GET">
-				<button class="react-btn" type="submit"><img src="https://i.imgur.com/94wTCj9.png"></button>
-			</form>
-			<form class="comments" action="/posts/<%= post._id %>/comments" method="GET">
-				<button class="comment-btn" type="submit"><img src="https://i.imgur.com/wFklCCW.png"></button>
-			</form>
+			<div class="reactions">
+				<form action="/posts/" method="GET">
+					<button class="react-btn" type="submit"><img src="https://i.imgur.com/94wTCj9.png"></button>
+				</form>
+			</div>
+			<div class="comments">
+				<form action="/posts/<%= post._id %>/comments" method="GET">
+					<button class="comment-btn" type="submit"><img src="https://i.imgur.com/wFklCCW.png"><%= post.comments.length %></button>
+				</form>
+			</div>
 		</div>
 	</div>
 
@@ -39,31 +38,25 @@
 				<div class="content"><%= t.content %></div>
 			</div>
 			<div class="thread-menu">
-				<form class="reactions" action="/posts/" method="GET">
+				<div class="reactions">
+				<form action="/posts/" method="GET">
 					<button class="react-btn" type="submit"><img src="https://i.imgur.com/94wTCj9.png"></button>
 				</form>
-				<form class="comments" action="/posts/<%= post._id %>/threadPosts/<%= t._id %>" method="GET">
-					<button class="comment-btn" type="submit">
-						<img src="https://i.imgur.com/wFklCCW.png">
-					</button>
-				</form>
-
-				<% if (user?._id.equals(t.user)) { %>
-				<form class="dot-menu" action="/posts/<%= post._id %>/threadPosts/<%= t._id %>?_method=DELETE" method="POST">
-					<button class="dot-menu-btn" type="submit">
-						<img src="https://i.imgur.com/pKmajeW.png">
-					</button>
-				</form>
-				<% } %>
-				<!-- <div class="dot-menu">
-					<a href="#!" class="dot-menu-btn"><img src="https://i.imgur.com/pKmajeW.png"></a>
-				</div> -->
-				
-					<!-- <ul class="dot-menu-list" >
-						<li><a href="">edit post</a></li>
-						<li><a href="">delete post</a></li>
-					</ul> -->
-				
+				</div>
+				<div class="comments">
+					<form action="/posts/<%= post._id %>/threadPosts/<%= t._id %>" method="GET">
+						<button class="comment-btn" type="submit"><img src="https://i.imgur.com/wFklCCW.png"><%= post.threadPosts[0].comments.length %></button>
+					</form>
+				</div>
+				<div class="dot-menu">
+					<% if (user?._id.equals(t.user)) { %>
+					<form action="/posts/<%= post._id %>/threadPosts/<%= t._id %>?_method=DELETE" method="POST">
+						<button class="dot-menu-btn" type="submit">
+							<img src="https://i.imgur.com/pKmajeW.png">
+						</button>
+					</form>
+					<% } %>
+				</div>
 			</div>
 		</div>
 		<% }) %>
@@ -71,6 +64,7 @@
 
 	<br>
 	<div class="container">
+	<% if (user) { %>
 		<div class="add-to-thread" id="add-to-thread">
 			<% if (user?._id.equals(post.user)) { %>
 			<form id="add-to-thread" action="/posts/<%= post._id %>/threadPosts" method="POST">
@@ -86,6 +80,7 @@
 			<% } %>
 		</div>
 	</div>
+	<% } %>
 </div>
 
 <%- include('../partials/footer') %>

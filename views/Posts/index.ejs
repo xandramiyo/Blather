@@ -4,26 +4,42 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/index.css' />
   </head>
-  <%- include('../partials/header') %>
+  <body>
+    <header>
+      <a class="home-icon" href="/">
+        <img src="https://i.imgur.com/axTaELO.png">
+      </a>
+      <nav>
+        <% if (user) { %>
+        <a href="/">Home</a>
+        <a href="/posts">Profile</a>
+        <a href="/logout">Log Out</a>
+        <% } else { %>
+          <a href="/auth/google" class="login">Log In</a>
+        <% } %>
+      </nav>
+    </header>
 
-<div class="sidebar">
-  <div class="pfp">
+  <div class="sidebar">
     <% if (user) { %>
-    <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" >
-    <% } %>
-  </div>
-  <div class="profile-buttons">
+    <div class="pfp">
+      <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" >
+    </div>
+    <div class="profile-buttons">
       <form action="/posts/new" method="GET">
         <button class="new-Btn" type="submit">Create a New Thread</button>
       </form>
-  </div>
-</div>
+    </div>
+    <% } %>
+ </div>
 
 <div class="post-ctr">
   <% posts.forEach(function(p) { %>
     <div class="post">
       <article onclick="window.location='/posts/<%= p.id %>'">
-        <h4><%= p.heading %></h4>
+        <div class="heading">
+          <h4><%= p.heading %></h4>
+        </div>
         <div class="subHeading-ctr">
           <h6><%= p.subHeading1 %></h6>
           <h6><%= p.subHeading2 %></h6>
