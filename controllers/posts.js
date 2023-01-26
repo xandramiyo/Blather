@@ -19,8 +19,7 @@ function index(req, res) {
 function show(req, res) {
     Post.findById(req.params.id, function(err, post) {
         res.render('posts/show', { post })
-    })
-    
+    })   
 }
 
 function newThread(req, res) {
