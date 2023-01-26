@@ -38,6 +38,7 @@
 	</div>
 	<% } %>
 
+	<% if (user) { %>
 	<div class="comment-form-ctr">
 		<form class="add-comment" action="/posts/<%= post._id %>/comments" method="POST">
 			<div class="comment-content">
@@ -46,6 +47,7 @@
 			<button id="add-comment-btn" type="submit">Add Comment</button>
 		</form>
 	</div>
+	<% } %>
 
 </div>
 

@@ -53,15 +53,19 @@ nav > a {
 .splash {
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 20%;
   height: 100vh;
 }
 
-.splash > img {
+.left-bubble > img,
+.right-bubble > img {
   height: 10rem;
   width: auto;
 }
 
+.left-bubble > img {
+  padding-top: 80px;
+}
 .container {
   display: flex;
   flex-direction: column;
