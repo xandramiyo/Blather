@@ -187,22 +187,25 @@ form {
 }
 
 .markup {
-  margin: 5px 0px 3px 0px;
+  margin: 5px 0px 0px 0px;
   padding: 2px 2px 0px 2px;
   height: fit-content;
   width: 100%;
   background-color: white;
+  border: 1px solid gray;
+  border-bottom: 1px solid #366D62;
 }
 
 .options {
   height: 2rem;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 
 .options > button {
-  height: 1.2rem;
+  height: 1.7rem;
+  
 }
 
 .option-button,
@@ -212,6 +215,14 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
+  background-color: white;
+}
+
+.option-button:hover ,
+.link-button:hover {
+  background-color:#A8CCC9;
+  cursor: pointer;
 }
 
 .link-button > img,
@@ -219,11 +230,11 @@ form {
   height: .7rem;
 }
 
-#content-input {
+#text-input {
   padding: 0px 2px 2px 2px;
   width: 100%;
   height: 10rem;
-  margin-top: 10px;
+  margin-top: 0px;
   border: 1px solid gray;
   background-color: white;
 }
@@ -322,7 +333,7 @@ form {
 .comment-form-ctr {
   display: flex;
   flex-direction: column;
-  margin-top: 5vmin;
+  margin-top: 3vmin;
   margin-bottom: 5vmin;
   background-color: #538D89;
   padding: 20px;
@@ -377,8 +388,7 @@ form {
   background-color: white;
 }
 
-.thread-menu img,
-a img {
+.thread-menu img {
   width: auto;
   height: 1.5rem;
 }

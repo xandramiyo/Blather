@@ -10,15 +10,15 @@ Home page
 
 Profile (index) page
 
-<img src="https://i.imgur.com/emYbonw.png">
+<img src="https://imgur.com/hbHBUtQ">
 
 Show page for threads
 
-<img src="https://i.imgur.com/MTCRmn9.png">
+<img src="https://imgur.com/Mfat1sw">
 
 Show page for comments
 
-<img src="https://i.imgur.com/6uTdR3K.png">
+<img src="https://imgur.com/3QSV6ES">
 
 ## Technologies
 
@@ -39,6 +39,7 @@ Log in using a google account to get started!
 ## Next Steps (Icebox)
 
 <ul>
+	<li>Get the text editor working</li>
 	<li>Create a profile model that will allow users to follow others and view their profile page</li>
 	<li>Add ability to set a post and its thread to private</li>
 	<li>Add specific threads to list of favorites, accessible on profile page</li>

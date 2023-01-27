@@ -17,10 +17,40 @@
             <textarea name="subHeading2" spellcheck="true" autocorrect="off" wrap="soft"><%= post.subHeading2 %></textarea>
         </div>
         <div class="markup">
-          text markup goes here
+          <div class="options">
+            <!-- Text Format -->
+            <button id="bold" class="option-button format">
+              <img src="https://i.imgur.com/cyoENgC.png">
+            </button>
+            <button id="italic" class="option-button format">
+              <img src="https://i.imgur.com/QUZrPb5.png">
+            </button>
+            <button id="underline" class="option-button format">
+              <img src="https://i.imgur.com/vrwuDT5.png">
+            </button>
+            <button id="strikethrough" class="option-button format">
+              <img src="https://i.imgur.com/l7zegJU.png">
+            </button>
+    
+            <!-- List -->
+            <button id="insertOrderedList" class="option-button">
+              <img src="https://i.imgur.com/0hCLZJV.png">
+            </button>
+            <button id="insertUnorderedList" class="option-button">
+              <img src="https://i.imgur.com/JDArV4h.png">
+            </button>
+    
+            <!-- Link -->
+            <button id="createLink" class="link-button">
+              <img src="https://i.imgur.com/1h2hp32.png">
+            </button>
+            <button id="unlink" class="option-button">
+              <img src="https://i.imgur.com/C2ZWeeL.png">
+            </button>
+          </div>
         </div>
         <div class="content-input">
-          <textarea name="content" spellcheck="true" autocorrect="off" wrap="soft"><%= post.content %></textarea>
+          <textarea id="text-input" name="content" spellcheck="true" autocorrect="off" wrap="soft"><%= post.content %></textarea>
         </div>
         <div class="post-Btn">
           <button id="post-Btn" type="submit">Post</button>

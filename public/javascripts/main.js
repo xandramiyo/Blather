@@ -6,7 +6,6 @@ function getContent() {
 	document.getElementById('text-input').value = document.getElementById('content-input').innerHTML
 }
 
-
 let optionsButtons = document.querySelectorAll(".option-button");
 let hyperlinkButton = document.querySelectorAll(".link-button");
 let linkButton = document.getElementById("createLink");
