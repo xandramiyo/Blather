@@ -10,7 +10,7 @@ Home page
 
 Profile (index) page
 
-<img src="https://i.imgur.com/hbHBUtQ.png>
+<img src="https://i.imgur.com/hbHBUtQ.png">
 
 Show page for threads
 
