@@ -10,15 +10,15 @@ Home page
 
 Profile (index) page
 
-<img src="https://imgur.com/hbHBUtQ">
+<img src="https://i.imgur.com/hbHBUtQ.png>
 
 Show page for threads
 
-<img src="https://imgur.com/Mfat1sw">
+<img src="https://i.imgur.com/Mfat1sw.png">
 
 Show page for comments
 
-<img src="https://imgur.com/3QSV6ES">
+<img src="https://i.imgur.com/3QSV6ES.png">
 
 ## Technologies
 
@@ -32,7 +32,7 @@ Node.js
 
 ## Take a Look!
 
-<a>Check out Blather</a>
+<a href="https://blather.herokuapp.com/">Check out Blather</a>
 
 Log in using a google account to get started!
 
