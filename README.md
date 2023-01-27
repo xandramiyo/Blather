@@ -24,6 +24,8 @@ Log in using a google account to get started!
 
 ## Acknowledgements
 
+scrolling text code : https://codepen.io/Murtaxa/pen/egrRbN 
+
 <a href="https://www.flaticon.com/free-icons/owl" title="owl icons">Owl icons created by Freepik - Flaticon</a>
 
 <a href="https://www.flaticon.com/free-icons/waste" title="waste icons">Waste icons created by Freepik - Flaticon</a>
