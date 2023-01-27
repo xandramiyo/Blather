@@ -4,6 +4,22 @@ Blather is the app for fans that love to express their thoughts and reactions ab
 
 Though Blather was created with media such as movies, serialized shows, books, and video games in mind, this is by no means a limitation! Use Blather as a personal journal, a habit tracker, track progress on that new hobby you picked up, keep notes on athletes' performance during a season for your fantasy games, whatever you can think of! The "thread" format of Blather posts allows for clear chronology for any topic, limited only by your own interests! 
 
+Home page
+
+<img src="https://i.imgur.com/jeUTTCD.png">
+
+Profile (index) page
+
+<img src="https://i.imgur.com/emYbonw.png">
+
+Show page for threads
+
+<img src="https://i.imgur.com/MTCRmn9.png">
+
+Show page for comments
+
+<img src="https://i.imgur.com/6uTdR3K.png">
+
 ## Technologies
 
 JavaScript
@@ -22,9 +38,22 @@ Log in using a google account to get started!
 
 ## Next Steps (Icebox)
 
+<ul>
+	<li>Create a profile model that will allow users to follow others and view their profile page</li>
+	<li>Add ability to set a post and its thread to private</li>
+	<li>Add specific threads to list of favorites, accessible on profile page</li>
+	<li>Display updates on the home page once logged in which will show updates by both the logged in user and those that they follow</li>
+	<li>Add reactions to posts</li>
+	<li>Add ability to edit thread posts and comments</li>
+	<li>Add ability to add images to posts</li>
+	<li>Add ability to reply to comments</li>
+	<li>Add ability to change order of posts on profile page</li>
+	<li>Responsiveness</li>
+</ul>
+
 ## Acknowledgements
 
-scrolling text code : https://codepen.io/Murtaxa/pen/egrRbN 
+ <a href="https://codepen.io/Murtaxa/pen/egrRbN">Scrolling text code</a>
 
 <a href="https://www.flaticon.com/free-icons/owl" title="owl icons">Owl icons created by Freepik - Flaticon</a>
 
@@ -42,3 +71,17 @@ scrolling text code : https://codepen.io/Murtaxa/pen/egrRbN
 <a href="https://www.flaticon.com/free-icons/previous" title="previous icons">Previous icons created by NextGen - Flaticon</a>
 
 <a href="https://www.flaticon.com/free-icons/three-dots" title="three dots icons">Three dots icons created by manglayang studio - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/list" title="list icons">List icons created by Chanut - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/number" title="number icons">Number icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/disconnect" title="disconnect icons">Disconnect icons created by Ferdinand - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/strikethrough" title="strikethrough icons">Strikethrough icons created by Pixel perfect - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/underline" title="underline icons">Underline icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/italic" title="italic icons">Italic icons created by Freepik - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/bold" title="bold icons">Bold icons created by Freepik - Flaticon</a>

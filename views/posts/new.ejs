@@ -8,7 +8,7 @@
         <div class="title">
             <h1><%= title %></h1>
         </div>
-        <form action="/posts" method="POST">
+        <form action="/posts" method="POST" onsubmit="return getContent()">
             <div class="heading-input"> 
                 <textarea name="heading" placeholder="Title (optional)" spellcheck="true" autocorrect="off" wrap="soft"></textarea>
             </div>
@@ -17,11 +17,42 @@
                 <textarea name="subHeading2" placeholder="Chapter 500" spellcheck="true" autocorrect="off" wrap="soft"></textarea>
             </div>
             <div class="markup">
-                text markup goes here- why is this and ^ width different
+                <div class="options">
+                    <!-- Text Format -->
+                    <button id="bold" class="option-button format">
+                      <img src="https://i.imgur.com/cyoENgC.png">
+                    </button>
+                    <button id="italic" class="option-button format">
+                      <img src="https://i.imgur.com/QUZrPb5.png">
+                    </button>
+                    <button id="underline" class="option-button format">
+                     <img src="https://i.imgur.com/vrwuDT5.png">
+                    </button>
+                    <button id="strikethrough" class="option-button format">
+                      <img src="https://i.imgur.com/l7zegJU.png">
+                    </button>
+            
+                    <!-- List -->
+                    <button id="insertOrderedList" class="option-button">
+                      <img src="https://i.imgur.com/0hCLZJV.png">
+                    </button>
+                    <button id="insertUnorderedList" class="option-button">
+                      <img src="https://i.imgur.com/JDArV4h.png">
+                    </button>
+            
+                    <!-- Link -->
+                    <button id="createLink" class="link-button">
+                      <img src="https://i.imgur.com/1h2hp32.png">
+                    </button>
+                    <button id="unlink" class="option-button">
+                      <img src="https://i.imgur.com/C2ZWeeL.png">
+                    </button>
+                  </div>
             </div>
             <div class="content-input">
-                <textarea name="content" placeholder="Blather away" spellcheck="true" autocorrect="off" wrap="soft"></textarea>
+                <div id="content-input" contenteditable="true" placeholder="Blather away" spellcheck="true" autocorrect="off" wrap="soft"></div>
             </div>
+            <textarea name="content" id="text-input" style="display:none"></textarea>
             <div class="post-Btn">
                 <button id="post-Btn" type="submit">Post</button>
             </div>

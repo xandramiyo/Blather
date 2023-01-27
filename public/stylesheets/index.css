@@ -139,3 +139,8 @@
     font-size: .8rem;
     color: #538D89;
   }
+
+  p {
+    white-space: pre-line;
+    white-space: pre-wrap;
+  }
