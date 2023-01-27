@@ -38,7 +38,7 @@
 	<% } %>
 	
 	<br>
-	<% if (user) {
+	<% if (user) { %>
 	<div class="comment-form-ctr">
 		<form class="add-comment" action="/posts/<%= post._id %>/threadposts/<%= thread[0]._id %>/comments" method="POST">
 			<div class="comment-content">

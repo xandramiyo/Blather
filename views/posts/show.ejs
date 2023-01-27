@@ -45,7 +45,10 @@
 				</div>
 				<div class="comments">
 					<form action="/posts/<%= post._id %>/threadPosts/<%= t._id %>" method="GET">
-						<button class="comment-btn" type="submit"><img src="https://i.imgur.com/wFklCCW.png"><%= post.threadPosts[0].comments.length %></button>
+						<button class="comment-btn" type="submit"><img src="https://i.imgur.com/wFklCCW.png">
+
+							<%= t.comments.length %>
+						</button>
 					</form>
 				</div>
 				<div class="dot-menu">

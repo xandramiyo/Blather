@@ -12,7 +12,6 @@ module.exports = {
 
 function index(req, res) {
     Post.find(({user : req.user._id}), function (err, posts) {
-        console.log('hi')
         res.render("posts/index", { title: "My Threads", posts });
       })
 }
