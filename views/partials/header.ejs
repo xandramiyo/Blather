@@ -15,15 +15,19 @@
       <nav>
         <% if (user) { %>
         <a href="/">Home</a>
-        <a href="#" class="user-menu-dropdown">Me</a>
-        <div class="user-menu-wrap">
-          <nav class="user-menu">
+        <a href="#" class="user-menu-dropdown" >Me</a>
+        <div class="user-menu-wrap" id="sub-menu">
+          <nav class="user-menu" class="nav">
             <div class="user-menu-info">
-              <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer">
-              <h4><%= user.name %></h4> 
+              <div>
+                <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer">
+              </div>
+              <div class="menu-username">
+                <h4><%= user.name %></h4> 
+              </div>
             </div>
             <a href="/posts">Posts</a>
-            <a href="#">Profile</a>
+            <a href="#!">Profile</a>
             <a href="/logout">Log Out</a>
           </nav>
           <% } else { %>

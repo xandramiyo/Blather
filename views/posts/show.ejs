@@ -28,27 +28,27 @@
 	</div>
 
 	<% if (post.threadPosts.length) { %>
+	<div class="thread-ctr">
 		<% post.threadPosts.forEach(function(t) { %>
-		<div class="thread-ctr">
 			<div class="show-thread">
 				<div class="thread-banner-row">
 					<div class="subHeadings"> 
 						<div><%= t.subHeading1 %></div>
 						<div><%= t.subHeading2 %></div>
 					</div>
-					<div class="dot-menu">
-						<% if (user?._id.equals(t.user)) { %>
-							<button class="dot-menu-btn" type="submit">
-								<img src="https://i.imgur.com/6PeksRX.png">
-							</button>
+					<% if (user?._id.equals(t.user)) { %>
+						<button class="dot-menu-btn" type="submit">
+							<img src="https://i.imgur.com/6PeksRX.png">
+						</button>
+						<div class="dot-menu hidden">
 							<form class="dot-menu-form" action="" method="POST">
 								<button class="dot-menu-option" type="submit">edit</button>
 							</form>
 							<form class="dot-menu-form" action="/posts/<%= post._id %>/threadPosts/<%= t._id %>?_method=DELETE" method="POST">
 								<button class="dot-menu-option" type="submit">delete</button>
 							</form>
-						<% } %>
-					</div>
+						</div>
+					<% } %>
 				</div>
 				<div class="content"><%= t.content %></div>
 			</div>
@@ -67,8 +67,8 @@
 					</form>
 				</div>
 			</div>
-		</div>
 		<% }) %>
+	</div>
 	<% } %>
 
 	<br>
