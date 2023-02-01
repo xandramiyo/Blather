@@ -31,9 +31,24 @@
 		<% post.threadPosts.forEach(function(t) { %>
 		<div class="thread-ctr">
 			<div class="show-thread">
-				<div class="subHeadings"> 
-					<div><%= t.subHeading1 %></div>
-					<div><%= t.subHeading2 %></div>
+				<div class="thread-banner-row">
+					<div class="subHeadings"> 
+						<div><%= t.subHeading1 %></div>
+						<div><%= t.subHeading2 %></div>
+					</div>
+					<div class="dot-menu">
+						<% if (user?._id.equals(t.user)) { %>
+							<button class="dot-menu-btn" type="submit">
+								<img src="https://i.imgur.com/6PeksRX.png">
+							</button>
+							<form class="dot-menu-form" action="" method="POST">
+								<button class="dot-menu-option" type="submit">edit</button>
+							</form>
+							<form class="dot-menu-form" action="/posts/<%= post._id %>/threadPosts/<%= t._id %>?_method=DELETE" method="POST">
+								<button class="dot-menu-option" type="submit">delete</button>
+							</form>
+						<% } %>
+					</div>
 				</div>
 				<div class="content"><%= t.content %></div>
 			</div>
@@ -50,15 +65,6 @@
 							<%= t.comments.length %>
 						</button>
 					</form>
-				</div>
-				<div class="dot-menu">
-					<% if (user?._id.equals(t.user)) { %>
-					<form action="/posts/<%= post._id %>/threadPosts/<%= t._id %>?_method=DELETE" method="POST">
-						<button class="dot-menu-btn" type="submit">
-							<img src="https://i.imgur.com/pKmajeW.png">
-						</button>
-					</form>
-					<% } %>
 				</div>
 			</div>
 		</div>

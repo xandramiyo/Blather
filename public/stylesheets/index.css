@@ -38,18 +38,62 @@
     margin-right: auto;
     padding: 2vmin;
   }
+
+  .home-icon {
+    width: fit-content;
+  }
   
   nav {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     padding: 1vmin;
+    height: 100%;
   }
   
   nav > a {
     color: black;
     padding: 5px;
     font-size: 1.4em;
+  }
+
+  .user-menu-wrap {
+    position: absolute;
+    top: 10%;
+    right: 1%;
+    width: 18vmin;
+    max-height: 0vmin;
+    overflow: hidden;
+    transition: max-height 0.5s;
+  }
+
+  .user-menu {
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #366D62;
+    font-size: .7rem;
+    font-weight: 200;
+  }
+
+  .user-menu-wrap.open-menu {
+    max-height: 20vmin;
+  }
+  
+  .user-menu-info {
+    display: flex;
+    width: 100%;
+  }
+  
+  .username {
+    margin: auto;
+  }
+
+  .user-menu-info img {
+    height: 1.5rem;
+    border-radius: 50%;
   }
 
   .sidebar {

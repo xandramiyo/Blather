@@ -51,7 +51,7 @@ async function deletePostComment(req, res, next) {
         // if(!post) return res.redirect('/posts')
         post.comments.remove(req.params.commentsId)
         await post.save()
-        res.redirect(`/posts/${post._id}`)
+        res.redirect(`/posts/${post._id}/comments`)
     } catch(err) {
         return next(err)
     }

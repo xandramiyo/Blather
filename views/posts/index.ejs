@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/index.css' />
-  </head>
-  <body>
-    <header>
-      <a class="home-icon" href="/">
-        <img src="https://i.imgur.com/axTaELO.png">
-      </a>
-      <nav>
-        <% if (user) { %>
-        <a href="/">Home</a>
-        <a href="/posts">Profile</a>
-        <a href="/logout">Log Out</a>
-        <% } else { %>
-          <a href="/auth/google" class="login">Log In</a>
-        <% } %>
-      </nav>
-    </header>
+<%- include('../partials/indexHeader') %>
 
   <div class="sidebar">
     <% if (user) { %>
@@ -26,6 +6,9 @@
       <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" >
     </div>
     <div class="profile-buttons">
+      <form action="/profiles/edit" method="GET">
+        <button class="new-Btn" type="submit">Edit Profile</button>
+      </form>
       <form action="/posts/new" method="GET">
         <button class="new-Btn" type="submit">Create a New Thread</button>
       </form>
