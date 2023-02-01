@@ -51,7 +51,7 @@ nav {
 
 nav > a {
   color: black;
-  padding: 5px;
+  padding: 5px 15px 5px 15px;
   font-size: 1.4em;
 }
 .user-menu-wrap {
@@ -351,10 +351,6 @@ form {
 
 /* THREAD STYLING */
 
-.thread-banner-row img {
-  height: 1.2rem;
-}
-
 .thread-banner-row {
   display: flex;
   justify-content: space-between;
@@ -464,11 +460,6 @@ form {
   align-items: center;
 }
 
-/* .dot-menu-btn {
-  display: flex;
-  justify-content: flex-end;
-} */
-
 .comment-btn > * {
   padding: 4px;
 }
@@ -575,6 +566,7 @@ form {
   background-color: white;
 }
 
+.dot-menu-btn > img,
 .comment-menu-btn >img {
   height: 1.2rem;
   width: auto;
@@ -624,6 +616,12 @@ form {
   opacity: 1;
 }
 
+.dot-menu-ctr {
+  display: flex;
+  flex-direction: column;
+}
+
 .dot-menu-btn {
-  top: 10vmin;
+  display: flex;
+  justify-content: flex-end;
 }

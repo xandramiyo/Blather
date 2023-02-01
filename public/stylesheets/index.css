@@ -53,7 +53,7 @@
   
   nav > a {
     color: black;
-    padding: 5px;
+    padding: 5px 15px 5px 15px;
     font-size: 1.4em;
   }
 
