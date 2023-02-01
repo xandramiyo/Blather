@@ -35,3 +35,20 @@ if(commentCtr) {
   }
 }
 
+//text editor
+const buttons = document.querySelectorAll('.option-button')
+const contentInput = document.querySelector('.text-input')
+
+if(buttons) {
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      let myEvent = button.dataset.command
+    // document.execCommand(myEvent, false, null)
+    //add || myEvent === "insertImage" in the if statement when added
+    if(myEvent === 'createLink') {
+      let url = prompt('Insert link here')
+      contentInput.execCommand(myEvent, false, url)
+    }
+    })
+  })
+}
