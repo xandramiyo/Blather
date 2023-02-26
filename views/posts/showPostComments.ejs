@@ -30,11 +30,11 @@
 				</div>
 				<% if (user?._id.equals(c.user)) { %>
 					<button class="comment-menu-btn">
-						<img class="btn-img" src="https://i.imgur.com/6PeksRX.png">
+						<img class="btn-img" src="https://cdn-icons-png.flaticon.com/512/4021/4021546.png">
 					</button>
 					<div class="sub-menu hidden">
 						<form class="sub-menu-form" action="" method="POST">
-							<button class="sub-menu-option" type="submit">edit</button>
+							<!-- <button class="sub-menu-option" type="submit">edit</button> -->
 						</form>
 						<form class="sub-menu-form" action="/posts/<%= post._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
 							<button class="sub-menu-option" type="submit">delete</button>

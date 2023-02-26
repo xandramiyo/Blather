@@ -21,6 +21,10 @@
     color: #366D62;
     text-decoration: none;
   }
+
+  a:hover {
+    color: #A8CCC9
+  }
   
   header {
     padding: 0px;
@@ -61,7 +65,7 @@
     position: absolute;
     top: 10%;
     right: 1%;
-    width: 18vmin;
+    width: 7rem;
     max-height: 0vmin;
     overflow: hidden;
     transition: max-height 0.5s;
@@ -79,8 +83,9 @@
   }
 
   .user-menu-wrap.open-menu {
-    max-height: 20vmin;
-  }
+    max-height: 10rem;
+    width: 7rem;
+   }
   
   .user-menu-info {
     display: flex;
@@ -146,6 +151,7 @@
     border: 1px solid #366D62;
     padding: 8px;
     overflow: scroll;
+    cursor: pointer;
   }
   
   .post-edit-btns {
@@ -156,6 +162,16 @@
 
   .post-edit-btns > form {
     width: 33.4%;
+  }
+
+  .new-Btn,
+  .post-edit-btns button {
+    cursor: pointer;
+  }
+
+  .new-Btn:hover,
+  .post-edit-btns button:hover {
+    background-color: #A8CCC9
   }
 
   button > img {

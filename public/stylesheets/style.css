@@ -20,6 +20,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #A8CCC9
+}
+
 header {
   padding: 0px;
   grid-area: nav;
@@ -58,7 +62,7 @@ nav > a {
   position: absolute;
   top: 10%;
   right: 1%;
-  width: 18vmin;
+  width: 7rem;
   max-height: 0vmin;
   overflow: hidden;
   transition: max-height 0.5s;
@@ -76,8 +80,9 @@ nav > a {
 }
 
 .user-menu-wrap.open-menu {
-  max-height: 20vmin;
-}
+  max-height: 10rem;
+  width: 7rem;
+ }
 
 .user-menu-info {
   display: flex;
@@ -155,6 +160,7 @@ transform: translateX(-100%);
 .left-bubble > img {
   padding-top: 80px;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -171,13 +177,7 @@ transform: translateX(-100%);
   background-color: #538D89;
   padding: 20px;
   width: 60vw;
-  height: fit-content;
   align-items: center;
-}
-
-.new-form, 
-.edit-form {
-  height: 80%
 }
 
 .title {
@@ -212,6 +212,10 @@ form {
   width: 80%;
 }
 
+.heading-input {
+  width: 21rem;
+}
+
 .heading-input > textarea {
   padding: 2px;
   width: 100%;
@@ -220,8 +224,7 @@ form {
 .subHeading-input {
   display: flex;
   justify-content: space-between;
-  padding: 2px 0px 2px 0px;
-  width: 101%
+  padding: 2px 0px;
 }
 
 .subHeading-input > textarea {
@@ -275,7 +278,7 @@ form {
 
 #text-input {
   padding: 0px 2px 2px 2px;
-  width: 100%;
+  width: 21rem;
   height: 10rem;
   margin-top: 0px;
   border: 1px solid gray;
@@ -286,11 +289,9 @@ form {
 }
 
 .post-Btn {
-  margin-top: 10px;
-  width: 48%;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
-  position: absolute;
   box-shadow: none;
 }
 
@@ -298,7 +299,7 @@ form {
   background-color: #A8CCC9;
   width: 4rem;
   height: 1.5rem;
-  border-radius: 35%;
+  border-radius: 10px;
 }
 
 /* SHOW PAGE */
@@ -595,25 +596,14 @@ form {
 .sub-menu-option {
   cursor: pointer;
   border: 1px solid black;
-  width: 100%;
-  height: 100%;
   text-align: center;
   background-color: #A8CCC9;
   color: black;
+  padding: .2rem;
 }
 
 .hidden {
   display: none;
-}
-
-.dot-menu-btn,
-.comment-menu-btn {
-  opacity: 0;
-}
-
-.dot-menu-btn:hover,
-.comment-menu-btn:hover {
-  opacity: 1;
 }
 
 .dot-menu-ctr {
